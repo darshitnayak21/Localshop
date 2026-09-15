@@ -1,0 +1,6 @@
+{
+  "name": "ShopFinder",
+  "description": "Discover local shops and businesses by category and street in your town with ShopFinder.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

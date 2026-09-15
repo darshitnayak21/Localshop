@@ -4,12 +4,13 @@ import { MapPin, ArrowLeft } from 'lucide-react';
 import SearchBar from '../components/ui/SearchBar';
 import ShopCard from '../components/ui/ShopCard';
 import { streets, shops } from '../data/mockData';
-import { getShopsByStreet, searchShops, getStreetNameById } from '../utils/filterUtils';
+import { getShopsByStreet, searchShops } from '../utils/filterUtils';
+import { Shop } from '../types';
 
 const StreetPage: React.FC = () => {
   const { streetId } = useParams<{ streetId: string }>();
-  const [streetShops, setStreetShops] = useState<any[]>([]);
-  const [filteredShops, setFilteredShops] = useState<any[]>([]);
+  const [streetShops, setStreetShops] = useState<Shop[]>([]);
+  const [filteredShops, setFilteredShops] = useState<Shop[]>([]);
   const [streetName, setStreetName] = useState('');
   
   useEffect(() => {

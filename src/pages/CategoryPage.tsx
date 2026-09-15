@@ -5,11 +5,12 @@ import SearchBar from '../components/ui/SearchBar';
 import ShopCard from '../components/ui/ShopCard';
 import { categories, shops } from '../data/mockData';
 import { getShopsByCategory, searchShops } from '../utils/filterUtils';
+import { Shop } from '../types';
 
 const CategoryPage: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
-  const [categoryShops, setCategoryShops] = useState<any[]>([]);
-  const [filteredShops, setFilteredShops] = useState<any[]>([]);
+  const [categoryShops, setCategoryShops] = useState<Shop[]>([]);
+  const [filteredShops, setFilteredShops] = useState<Shop[]>([]);
   const [categoryName, setCategoryName] = useState('');
   const [categoryColor, setCategoryColor] = useState('bg-teal-500');
   

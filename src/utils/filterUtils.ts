@@ -1,4 +1,4 @@
-import { Shop } from '../types';
+import { Shop, Category, Street } from '../types';
 
 export const filterShopsByCategory = (shops: Shop[], category: string | null): Shop[] => {
   if (!category) return shops;
@@ -21,12 +21,12 @@ export const searchShops = (shops: Shop[], searchTerm: string): Shop[] => {
   );
 };
 
-export const getCategoryNameById = (categoryId: string, categories: any[]): string => {
+export const getCategoryNameById = (categoryId: string, categories: Category[]): string => {
   const category = categories.find(cat => cat.id === categoryId);
   return category ? category.name : 'Unknown';
 };
 
-export const getStreetNameById = (streetId: string, streets: any[]): string => {
+export const getStreetNameById = (streetId: string, streets: Street[]): string => {
   const street = streets.find(s => s.id === streetId);
   return street ? street.name : 'Unknown';
 };
@@ -39,7 +39,7 @@ export const getShopsByStreet = (shops: Shop[], streetId: string): Shop[] => {
   return shops.filter(shop => shop.street === streetId);
 };
 
-export const getCategoryColor = (categoryId: string, categories: any[]): string => {
+export const getCategoryColor = (categoryId: string, categories: Category[]): string => {
   const category = categories.find(cat => cat.id === categoryId);
   return category ? category.color : 'bg-gray-500';
 };

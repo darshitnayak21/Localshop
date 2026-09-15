@@ -6,10 +6,11 @@ import CategoryCard from '../components/ui/CategoryCard';
 import StreetCard from '../components/ui/StreetCard';
 import ShopCard from '../components/ui/ShopCard';
 import { categories, streets, shops } from '../data/mockData';
-import { searchShops, getShopsByCategory } from '../utils/filterUtils';
+import { searchShops } from '../utils/filterUtils';
+import { Shop } from '../types';
 
 const HomePage: React.FC = () => {
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<Shop[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const navigate = useNavigate();
